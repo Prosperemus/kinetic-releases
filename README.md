@@ -10,6 +10,47 @@ A suite of Power BI custom visuals for operational and geospatial data built aro
 
 ---
 
+## See it in action
+
+The screenshots below are the included **[Gettysburg.pbix](samples/Gettysburg.pbix)** sample — the second day of the Battle of Gettysburg (July 2, 1863), with every unit and engagement plotted from MGRS grid references and filtered to a single day by the Kinetic Timeline. Open the sample and you have this report in minutes.
+
+**Kinetic Map (2D)** — MIL-STD-2525C symbols on satellite imagery, with an MGRS grid overlay, movement trails, an on-map category filter, and the day-strip timeline driving the date:
+
+![Kinetic Map 2D — Gettysburg, Day 2](docs/gettysburg-2d.png)
+
+**Kinetic Map 3D** — the same data and symbols draped over a photorealistic 3D globe with terrain, hillshade, and a compass for view rotation:
+
+![Kinetic Map 3D — Gettysburg, Day 2](docs/gettysburg-3d.png)
+
+---
+
+## Key features
+
+### Kinetic Map (2D & 3D)
+
+- **Recreate a battlefield or Common Operating Picture (COP)** — a full toolset to dynamically display live operational data or reconstruct a historical engagement.
+- **MIL-STD-2525C symbology** — render the full 2525C unit and event symbol set, auto-colored by affiliation (friendly / hostile / neutral / unknown).
+- **MGRS or lat/long plotting** — accepts Military Grid Reference System coordinates (or decimal lat/long) for both unit and event placement.
+- **Dynamic MGRS grid overlays** — a zoom-adaptive grid (GZD → 100 km → 10 km → 1 km → 100 m) drawn live over the map.
+- **Movement trails** — connect a unit's positions over time to visualize maneuver and advance.
+- **Six map styles** — satellite, hybrid, street, topographic, light-gray, and NatGeo basemaps (3D adds 3D terrain + hillshade).
+- **Area overlays / geofences** — define fenced areas from inline GeoJSON or a URL and draw them on the map.
+- **Built-in overlay filter** — an on-map category panel that filters the map's own symbols and the rest of the report page.
+- **Co-located stacking** — automatically spreads items sharing the same point so nothing hides behind another symbol, keeping the view clean.
+- **Custom hover-over information** — choose exactly which fields appear in the tooltip when you hover a symbol.
+- **Deep customization** — fine control over spacing, sizes, label gaps, and offsets across every element.
+- **3D extras** — a photorealistic 3D globe with terrain exaggeration, hillshade, a compass rose, and free view rotation.
+
+### Kinetic Timeline
+
+- **Day-strip date selection** — scroll to any date and **ctrl + click** or **click-drag** to select single days or a contiguous range.
+- **Within-day time filter** — drag a time-of-day slider to scope fast-moving events down to the hour inside a single day.
+- **Historical-date support** — handles dates earlier than standardized time zones, so you can faithfully recreate historical events (the 1863 Gettysburg sample relies on this).
+- **Customizable coloring** — many pre-made color schemes plus custom color overrides.
+- **Page-wide sync** — emits a standard Power BI filter that scopes every visual on the page, including both Kinetic maps.
+
+---
+
 ## Download
 
 The latest release is **v1.3.1.1**. Download the `.pbiviz` files from the [Releases](../../releases/latest) page and import them into Power BI via **Insert → Get more visuals → Import a visual from a file**.
@@ -42,13 +83,70 @@ The [`samples/`](samples/) folder contains ready-to-open `.pbix` files demonstra
 | **MGRS** | Text | Military Grid Reference System string (e.g. `16SBK1234567890`). Takes priority over Lat/Lon when both are bound. |
 | **Lat** | Decimal | Latitude in decimal degrees |
 | **Lon** | Decimal | Longitude in decimal degrees |
-| **Symbol Type** | Text | MIL-STD-2525C SIDC string (see [Symbol codes](#symbol-codes) below) |
+| **Symbol Type** | Text | A friendly **alias** (e.g. `infantry`) or a raw MIL-STD-2525C SIDC string. See [Symbol aliases](#symbol-aliases) and [Symbol codes](#symbol-codes-sidc) below. |
 | **Affiliation** | Text | `F` Friendly · `H` Hostile · `N` Neutral · `U` Unknown |
 | **Organization** | Text | Groups units for color-by-organization mode |
 | **Color** | Text | Hex (`#FF6600`) or CSS color name to override the symbol fill |
 | **Date** | Date/Time | Enables movement trails and timeline filtering |
 | **Filter** | Any | Category field exposed in the filter overlay panel *(paid)* |
 | **Priority** | Number | Z-order for overlapping symbols — higher number renders on top |
+
+### Symbol aliases
+
+You rarely need to type a raw 15-character SIDC. The **Symbol Type** field accepts a plain-English **alias** and Kinetic resolves it to the correct MIL-STD-2525C symbol, with a sensible default affiliation you can override via the **Affiliation** or **Color** fields. Aliases are **case-insensitive** and tolerate extra spaces, and most symbols answer to several synonyms.
+
+There are three ways to set a symbol:
+
+1. **Friendly alias** — e.g. `infantry`, `armor`, `field artillery`, `helicopter`, `ied`, `sniper`. Over **230 unit aliases** and **600 event aliases** are recognized.
+2. **Raw 2525C SIDC** — any valid 15-character code, e.g. `SFGPUCI---E----` (see [Symbol codes](#symbol-codes-sidc) below).
+3. **Custom glyph** — `CUSTOM:<glyph>` for shapes 2525C has no clean symbol for: `CUSTOM:building`, plus `bug` / `rodent` / `bird` / `reptile` for infestations.
+
+#### Free vs. paid aliases
+
+The **free tier** renders a core set of ~30 symbols — listed below — at full fidelity. Every alias/synonym of a free symbol works without a license. The **full library** (~340 symbols, every other alias) requires a Kinetic license; until then a locked symbol renders as a neutral grey dot in place of its glyph. Aliases are still *accepted* when unlicensed — only the paid glyph is withheld — so a report authored with a license degrades gracefully rather than breaking.
+
+**Free unit symbols**
+
+| Symbol | Aliases you can type |
+|---|---|
+| Infantry | `infantry` |
+| Armor | `armor`, `armour` |
+| Field artillery | `field artillery`, `artillery`, `arty`, `fa` |
+| Engineer | `engineer`, `engineers` |
+| Aviation (rotary wing) | `aviation`, `rotary wing`, `aviation rotary wing` |
+| Headquarters / command post | `headquarters`, `hq`, `command post`, `hq element`, `headquarters element` |
+| Medical | `medical`, `medic`, `med` |
+| Transportation | `transport`, `transportation` |
+| CBRN / chemical | `cbrn`, `chemical`, `nbc` |
+| Electronic warfare | `electronic warfare`, `ew unit` |
+
+**Free event symbols**
+
+| Symbol | Aliases you can type |
+|---|---|
+| Explosion | `explosion`, `blast`, `detonation` |
+| IED | `ied`, `ied detonation`, `ied emplacement` |
+| Direct fire / small arms | `direct fire`, `small arms`, `sniper`, `sniping`, `firefight`, `contact`, `engagement` |
+| Poisoning (CBRN) | `poisoning`, `cbrn`, `chemical` |
+| Minefield | `mine`, `minefield`, `mine laying` |
+| Land mine | `land mine`, `land mines` |
+| PSYOP | `psyop`, `psychological operations`, `miso` |
+| UAV / drone | `uav`, `uas`, `drone` |
+| Electronic warfare | `electronic warfare`, `ew` |
+| Biological event | `biological`, `bio`, `bioagent`, `biological agent`, `biological release`, `biological attack`, `bioweapon` |
+| Chemical release | `chemical release`, `chemical attack`, `chemical weapon` |
+| Nuclear detonation | `nuclear detonation`, `ground zero`, `nuclear strike` |
+| Civil disturbance | `demonstration`, `riot`, `protest`, `civil disturbance`, `mass gathering`, `unrest` |
+| Field hospital | `hospital`, `field hospital`, `clinic`, `medical treatment facility`, `health department facility` |
+| SAM launcher | `sam launcher`, `surface-to-air missile`, `air defense missile launcher` |
+| Rifle | `rifle` |
+| Tank | `tank`, `main battle tank`, `mbt` |
+| Car | `car`, `automobile` |
+| Military aircraft | `military aircraft`, `aircraft` |
+| Inspection gate | `gate`, `base gate`, `vehicle inspection`, `traffic inspection facility` |
+| Building (custom glyph) | `building`, `structure`, `house`, `generic building`, `manmade structure` |
+
+Anything outside this list — the rest of the ~340-symbol library — is a paid symbol. See [Licensing](#licensing).
 
 ### Symbol codes (SIDC)
 
