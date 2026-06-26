@@ -12,13 +12,13 @@ A suite of Power BI custom visuals for operational and geospatial data built aro
 
 ## Download
 
-The latest release is **v1.3.1.0**. Download the `.pbiviz` files from the [Releases](../../releases/latest) page and import them into Power BI via **Insert → Get more visuals → Import a visual from a file**.
+The latest release is **v1.3.1.1**. Download the `.pbiviz` files from the [Releases](../../releases/latest) page and import them into Power BI via **Insert → Get more visuals → Import a visual from a file**.
 
 | Visual | Download |
 |---|---|
-| Kinetic Map | [KineticMap-1.3.1.0.pbiviz](../../releases/download/v1.3.1.0/KineticMap-1.3.1.0.pbiviz) |
-| Kinetic Map 3D | [KineticMap3D-1.3.1.0.pbiviz](../../releases/download/v1.3.1.0/KineticMap3D-1.3.1.0.pbiviz) |
-| Kinetic Timeline | [KineticTimeline-1.3.1.0.pbiviz](../../releases/download/v1.3.1.0/KineticTimeline-1.3.1.0.pbiviz) |
+| Kinetic Map | [KineticMap-1.3.1.1.pbiviz](../../releases/download/v1.3.1.1/KineticMap-1.3.1.1.pbiviz) |
+| Kinetic Map 3D | [KineticMap3D-1.3.1.1.pbiviz](../../releases/download/v1.3.1.1/KineticMap3D-1.3.1.1.pbiviz) |
+| Kinetic Timeline | [KineticTimeline-1.3.1.1.pbiviz](../../releases/download/v1.3.1.1/KineticTimeline-1.3.1.1.pbiviz) |
 
 ---
 
