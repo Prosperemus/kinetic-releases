@@ -65,11 +65,12 @@ The latest release is **v1.3.1.1**. Download the `.pbiviz` files from the [Relea
 
 ## Sample files
 
-The [`samples/`](samples/) folder contains ready-to-open `.pbix` files demonstrating the visuals with real data.
+The [`samples/`](samples/) folder contains a ready-to-open Power BI report **and** the raw dataset behind it — so you can explore the finished visuals or rebuild them from scratch.
 
 | File | Description |
 |---|---|
-| [Gettysburg.pbix](samples/Gettysburg.pbix) | Battle of Gettysburg (July 1–3, 1863) — unit positions plotted via MGRS with the Kinetic Timeline for day-by-day filtering |
+| [Gettysburg.pbix](samples/Gettysburg.pbix) | Battle of Gettysburg (July 1–3, 1863) — unit positions and engagements plotted via MGRS, with the Kinetic Timeline for day-by-day filtering. Built with the current **v1.3.1.1** visuals. |
+| [gettysburg-sample.xlsx](samples/gettysburg-sample.xlsx) | The **raw source data** for the report above — one row per unit/event with MGRS, symbol type, affiliation, organization, color, and date/time. Load it into Power BI to build your own report, or review it to see the expected column layout. |
 
 ---
 
