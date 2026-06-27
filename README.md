@@ -69,8 +69,8 @@ The [`samples/`](samples/) folder contains a ready-to-open Power BI report **and
 
 | File | Description |
 |---|---|
-| [Gettysburg.pbix](samples/Gettysburg.pbix) | Battle of Gettysburg (July 1–3, 1863) — unit positions and engagements plotted via MGRS, with the Kinetic Timeline for day-by-day filtering. Built with the current **v1.3.1.1** visuals. |
-| [gettysburg-sample.xlsx](samples/gettysburg-sample.xlsx) | The **raw source data** for the report above — one row per unit/event with MGRS, symbol type, affiliation, organization, color, and date/time. Load it into Power BI to build your own report, or review it to see the expected column layout. |
+| [Gettysburg.pbix](samples/Gettysburg.pbix) | Battle of Gettysburg (July 1–3, 1863) — corps, divisions, and named brigades plotted across all three days with **intraday movement trails** (the meeting engagement, Longstreet's assault, and Pickett's Charge in detail), driven by the Kinetic Timeline. Built with the current **v1.3.1.1** visuals. |
+| [gettysburg-sample.xlsx](samples/gettysburg-sample.xlsx) | The **raw source data** for the report above (182 rows). One row per unit/event with its symbol type, affiliation, organization, color, priority, **both lat/long and MGRS coordinates**, and a historical date/time (plus a modern-date column). Load it into Power BI to build your own report, or review it to see the expected column layout. |
 
 ---
 
