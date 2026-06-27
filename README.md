@@ -53,13 +53,13 @@ The screenshots below are the included **[Gettysburg.pbix](samples/Gettysburg.pb
 
 ## Download
 
-The latest release is **v1.3.1.1**. Download the `.pbiviz` files from the [Releases](../../releases/latest) page and import them into Power BI via **Insert → Get more visuals → Import a visual from a file**.
+The latest release is **v1.3.2.0**. Download the `.pbiviz` files from the [Releases](../../releases/latest) page and import them into Power BI via **Insert → Get more visuals → Import a visual from a file**.
 
 | Visual | Download |
 |---|---|
-| Kinetic Map | [KineticMap-1.3.1.1.pbiviz](../../releases/download/v1.3.1.1/KineticMap-1.3.1.1.pbiviz) |
-| Kinetic Map 3D | [KineticMap3D-1.3.1.1.pbiviz](../../releases/download/v1.3.1.1/KineticMap3D-1.3.1.1.pbiviz) |
-| Kinetic Timeline | [KineticTimeline-1.3.1.1.pbiviz](../../releases/download/v1.3.1.1/KineticTimeline-1.3.1.1.pbiviz) |
+| Kinetic Map | [KineticMap-1.3.2.0.pbiviz](../../releases/download/v1.3.2.0/KineticMap-1.3.2.0.pbiviz) |
+| Kinetic Map 3D | [KineticMap3D-1.3.2.0.pbiviz](../../releases/download/v1.3.2.0/KineticMap3D-1.3.2.0.pbiviz) |
+| Kinetic Timeline | [KineticTimeline-1.3.2.0.pbiviz](../../releases/download/v1.3.2.0/KineticTimeline-1.3.2.0.pbiviz) |
 
 ---
 
@@ -69,7 +69,7 @@ The [`samples/`](samples/) folder contains a ready-to-open Power BI report **and
 
 | File | Description |
 |---|---|
-| [Gettysburg.pbix](samples/Gettysburg.pbix) | Battle of Gettysburg (July 1–3, 1863) — corps, divisions, and named brigades plotted across all three days with **intraday movement trails** (the meeting engagement, Longstreet's assault, and Pickett's Charge in detail), driven by the Kinetic Timeline. Built with the current **v1.3.1.1** visuals. |
+| [Gettysburg.pbix](samples/Gettysburg.pbix) | Battle of Gettysburg (July 1–3, 1863) — corps, divisions, and named brigades plotted across all three days with **intraday movement trails** (the meeting engagement, Longstreet's assault, and Pickett's Charge in detail), driven by the Kinetic Timeline. |
 | [gettysburg-sample.xlsx](samples/gettysburg-sample.xlsx) | The **raw source data** for the report above (182 rows). One row per unit/event with its symbol type, affiliation, organization, color, priority, **both lat/long and MGRS coordinates**, and a historical date/time (plus a modern-date column). Load it into Power BI to build your own report, or review it to see the expected column layout. |
 
 ---
