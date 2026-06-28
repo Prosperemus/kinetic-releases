@@ -53,13 +53,13 @@ The screenshots below are the included **[Gettysburg.pbix](samples/Gettysburg.pb
 
 ## Download
 
-The latest release is **v1.3.2.0**. Download the `.pbiviz` files from the [Releases](../../releases/latest) page and import them into Power BI via **Insert → Get more visuals → Import a visual from a file**.
+The latest release is **v1.3.3.0**. Download the `.pbiviz` files from the [Releases](../../releases/latest) page and import them into Power BI via **Insert → Get more visuals → Import a visual from a file**.
 
 | Visual | Download |
 |---|---|
-| Kinetic Map | [KineticMap-1.3.2.0.pbiviz](../../releases/download/v1.3.2.0/KineticMap-1.3.2.0.pbiviz) |
-| Kinetic Map 3D | [KineticMap3D-1.3.2.0.pbiviz](../../releases/download/v1.3.2.0/KineticMap3D-1.3.2.0.pbiviz) |
-| Kinetic Timeline | [KineticTimeline-1.3.2.0.pbiviz](../../releases/download/v1.3.2.0/KineticTimeline-1.3.2.0.pbiviz) |
+| Kinetic Map | [KineticMap-1.3.3.0.pbiviz](../../releases/download/v1.3.3.0/KineticMap-1.3.3.0.pbiviz) |
+| Kinetic Map 3D | [KineticMap3D-1.3.3.0.pbiviz](../../releases/download/v1.3.3.0/KineticMap3D-1.3.3.0.pbiviz) |
+| Kinetic Timeline | [KineticTimeline-1.3.3.0.pbiviz](../../releases/download/v1.3.3.0/KineticTimeline-1.3.3.0.pbiviz) |
 
 ---
 
